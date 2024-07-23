@@ -1,5 +1,9 @@
-const _ = require('lodash');
+// Creating server with Events emiiter and listener
+const http = require('http');
 
-const items = [1, 2, [3, 4 ,[5]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+const server = http.createServer();
+server.on('request', (req, res) => {
+    res.end('Goodbye');
+});
+
+server.listen(5000);
